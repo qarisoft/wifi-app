@@ -20,17 +20,37 @@ OperationalCard _$OperationalCardFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OperationalCard {
+  @JsonKey(name: 'rec_ser')
   int get id => throw _privateConstructorUsedError;
-  int get yearId => throw _privateConstructorUsedError; //
+  @JsonKey(name: 'card_id')
   int get cardId => throw _privateConstructorUsedError;
-  int get cardprice => throw _privateConstructorUsedError;
-  int get isFree => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError; //
+  @JsonKey(name: 'year_id')
+  int get yearId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'in_qty')
   int get inQty => throw _privateConstructorUsedError;
-  int get outQty => throw _privateConstructorUsedError; //
-  int get typeHdrId => throw _privateConstructorUsedError;
-  int get typeDtlId => throw _privateConstructorUsedError; //
-  DateTime get createdOn => throw _privateConstructorUsedError;
+  @JsonKey(name: 'out_qty')
+  int get outQty => throw _privateConstructorUsedError;
+  @JsonKey(name: 'card_price')
+  double get cardPrice => throw _privateConstructorUsedError; //
+  @JsonKey(name: 'is_free')
+  bool get isFree => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_generated')
+  bool get isGenerated => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_valid')
+  bool get isValid => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_rejected')
+  bool get isRejected => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_out_dated')
+  bool get isOutDated => throw _privateConstructorUsedError; //
+  @JsonKey(name: 'source_id')
+  int get sourceId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'source_table')
+  String get sourceTable => throw _privateConstructorUsedError; //
+  @JsonKey(name: 'created_at')
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'created_by')
+  int get createdBy => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   /// Serializes this OperationalCard to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,17 +69,22 @@ abstract class $OperationalCardCopyWith<$Res> {
       _$OperationalCardCopyWithImpl<$Res, OperationalCard>;
   @useResult
   $Res call(
-      {int id,
-      int yearId,
-      int cardId,
-      int cardprice,
-      int isFree,
-      int status,
-      int inQty,
-      int outQty,
-      int typeHdrId,
-      int typeDtlId,
-      DateTime createdOn});
+      {@JsonKey(name: 'rec_ser') int id,
+      @JsonKey(name: 'card_id') int cardId,
+      @JsonKey(name: 'year_id') int yearId,
+      @JsonKey(name: 'in_qty') int inQty,
+      @JsonKey(name: 'out_qty') int outQty,
+      @JsonKey(name: 'card_price') double cardPrice,
+      @JsonKey(name: 'is_free') bool isFree,
+      @JsonKey(name: 'is_generated') bool isGenerated,
+      @JsonKey(name: 'is_valid') bool isValid,
+      @JsonKey(name: 'is_rejected') bool isRejected,
+      @JsonKey(name: 'is_out_dated') bool isOutDated,
+      @JsonKey(name: 'source_id') int sourceId,
+      @JsonKey(name: 'source_table') String sourceTable,
+      @JsonKey(name: 'created_at') DateTime createdAt,
+      @JsonKey(name: 'created_by') int createdBy,
+      String description});
 }
 
 /// @nodoc
@@ -78,41 +103,34 @@ class _$OperationalCardCopyWithImpl<$Res, $Val extends OperationalCard>
   @override
   $Res call({
     Object? id = null,
-    Object? yearId = null,
     Object? cardId = null,
-    Object? cardprice = null,
-    Object? isFree = null,
-    Object? status = null,
+    Object? yearId = null,
     Object? inQty = null,
     Object? outQty = null,
-    Object? typeHdrId = null,
-    Object? typeDtlId = null,
-    Object? createdOn = null,
+    Object? cardPrice = null,
+    Object? isFree = null,
+    Object? isGenerated = null,
+    Object? isValid = null,
+    Object? isRejected = null,
+    Object? isOutDated = null,
+    Object? sourceId = null,
+    Object? sourceTable = null,
+    Object? createdAt = null,
+    Object? createdBy = null,
+    Object? description = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      yearId: null == yearId
-          ? _value.yearId
-          : yearId // ignore: cast_nullable_to_non_nullable
-              as int,
       cardId: null == cardId
           ? _value.cardId
           : cardId // ignore: cast_nullable_to_non_nullable
               as int,
-      cardprice: null == cardprice
-          ? _value.cardprice
-          : cardprice // ignore: cast_nullable_to_non_nullable
-              as int,
-      isFree: null == isFree
-          ? _value.isFree
-          : isFree // ignore: cast_nullable_to_non_nullable
-              as int,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      yearId: null == yearId
+          ? _value.yearId
+          : yearId // ignore: cast_nullable_to_non_nullable
               as int,
       inQty: null == inQty
           ? _value.inQty
@@ -122,18 +140,50 @@ class _$OperationalCardCopyWithImpl<$Res, $Val extends OperationalCard>
           ? _value.outQty
           : outQty // ignore: cast_nullable_to_non_nullable
               as int,
-      typeHdrId: null == typeHdrId
-          ? _value.typeHdrId
-          : typeHdrId // ignore: cast_nullable_to_non_nullable
+      cardPrice: null == cardPrice
+          ? _value.cardPrice
+          : cardPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      isFree: null == isFree
+          ? _value.isFree
+          : isFree // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerated: null == isGenerated
+          ? _value.isGenerated
+          : isGenerated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRejected: null == isRejected
+          ? _value.isRejected
+          : isRejected // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isOutDated: null == isOutDated
+          ? _value.isOutDated
+          : isOutDated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      sourceId: null == sourceId
+          ? _value.sourceId
+          : sourceId // ignore: cast_nullable_to_non_nullable
               as int,
-      typeDtlId: null == typeDtlId
-          ? _value.typeDtlId
-          : typeDtlId // ignore: cast_nullable_to_non_nullable
-              as int,
-      createdOn: null == createdOn
-          ? _value.createdOn
-          : createdOn // ignore: cast_nullable_to_non_nullable
+      sourceTable: null == sourceTable
+          ? _value.sourceTable
+          : sourceTable // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      createdBy: null == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as int,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -147,17 +197,22 @@ abstract class _$$OperationalCardImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
-      int yearId,
-      int cardId,
-      int cardprice,
-      int isFree,
-      int status,
-      int inQty,
-      int outQty,
-      int typeHdrId,
-      int typeDtlId,
-      DateTime createdOn});
+      {@JsonKey(name: 'rec_ser') int id,
+      @JsonKey(name: 'card_id') int cardId,
+      @JsonKey(name: 'year_id') int yearId,
+      @JsonKey(name: 'in_qty') int inQty,
+      @JsonKey(name: 'out_qty') int outQty,
+      @JsonKey(name: 'card_price') double cardPrice,
+      @JsonKey(name: 'is_free') bool isFree,
+      @JsonKey(name: 'is_generated') bool isGenerated,
+      @JsonKey(name: 'is_valid') bool isValid,
+      @JsonKey(name: 'is_rejected') bool isRejected,
+      @JsonKey(name: 'is_out_dated') bool isOutDated,
+      @JsonKey(name: 'source_id') int sourceId,
+      @JsonKey(name: 'source_table') String sourceTable,
+      @JsonKey(name: 'created_at') DateTime createdAt,
+      @JsonKey(name: 'created_by') int createdBy,
+      String description});
 }
 
 /// @nodoc
@@ -174,41 +229,34 @@ class __$$OperationalCardImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? yearId = null,
     Object? cardId = null,
-    Object? cardprice = null,
-    Object? isFree = null,
-    Object? status = null,
+    Object? yearId = null,
     Object? inQty = null,
     Object? outQty = null,
-    Object? typeHdrId = null,
-    Object? typeDtlId = null,
-    Object? createdOn = null,
+    Object? cardPrice = null,
+    Object? isFree = null,
+    Object? isGenerated = null,
+    Object? isValid = null,
+    Object? isRejected = null,
+    Object? isOutDated = null,
+    Object? sourceId = null,
+    Object? sourceTable = null,
+    Object? createdAt = null,
+    Object? createdBy = null,
+    Object? description = null,
   }) {
     return _then(_$OperationalCardImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      yearId: null == yearId
-          ? _value.yearId
-          : yearId // ignore: cast_nullable_to_non_nullable
-              as int,
       cardId: null == cardId
           ? _value.cardId
           : cardId // ignore: cast_nullable_to_non_nullable
               as int,
-      cardprice: null == cardprice
-          ? _value.cardprice
-          : cardprice // ignore: cast_nullable_to_non_nullable
-              as int,
-      isFree: null == isFree
-          ? _value.isFree
-          : isFree // ignore: cast_nullable_to_non_nullable
-              as int,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      yearId: null == yearId
+          ? _value.yearId
+          : yearId // ignore: cast_nullable_to_non_nullable
               as int,
       inQty: null == inQty
           ? _value.inQty
@@ -218,18 +266,50 @@ class __$$OperationalCardImplCopyWithImpl<$Res>
           ? _value.outQty
           : outQty // ignore: cast_nullable_to_non_nullable
               as int,
-      typeHdrId: null == typeHdrId
-          ? _value.typeHdrId
-          : typeHdrId // ignore: cast_nullable_to_non_nullable
+      cardPrice: null == cardPrice
+          ? _value.cardPrice
+          : cardPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      isFree: null == isFree
+          ? _value.isFree
+          : isFree // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerated: null == isGenerated
+          ? _value.isGenerated
+          : isGenerated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRejected: null == isRejected
+          ? _value.isRejected
+          : isRejected // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isOutDated: null == isOutDated
+          ? _value.isOutDated
+          : isOutDated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      sourceId: null == sourceId
+          ? _value.sourceId
+          : sourceId // ignore: cast_nullable_to_non_nullable
               as int,
-      typeDtlId: null == typeDtlId
-          ? _value.typeDtlId
-          : typeDtlId // ignore: cast_nullable_to_non_nullable
-              as int,
-      createdOn: null == createdOn
-          ? _value.createdOn
-          : createdOn // ignore: cast_nullable_to_non_nullable
+      sourceTable: null == sourceTable
+          ? _value.sourceTable
+          : sourceTable // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      createdBy: null == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as int,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -238,51 +318,80 @@ class __$$OperationalCardImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OperationalCardImpl implements _OperationalCard {
   const _$OperationalCardImpl(
-      {required this.id,
-      required this.yearId,
-      required this.cardId,
-      required this.cardprice,
-      required this.isFree,
-      required this.status,
-      required this.inQty,
-      required this.outQty,
-      required this.typeHdrId,
-      required this.typeDtlId,
-      required this.createdOn});
+      {@JsonKey(name: 'rec_ser') required this.id,
+      @JsonKey(name: 'card_id') required this.cardId,
+      @JsonKey(name: 'year_id') required this.yearId,
+      @JsonKey(name: 'in_qty') required this.inQty,
+      @JsonKey(name: 'out_qty') required this.outQty,
+      @JsonKey(name: 'card_price') required this.cardPrice,
+      @JsonKey(name: 'is_free') required this.isFree,
+      @JsonKey(name: 'is_generated') required this.isGenerated,
+      @JsonKey(name: 'is_valid') required this.isValid,
+      @JsonKey(name: 'is_rejected') required this.isRejected,
+      @JsonKey(name: 'is_out_dated') required this.isOutDated,
+      @JsonKey(name: 'source_id') required this.sourceId,
+      @JsonKey(name: 'source_table') required this.sourceTable,
+      @JsonKey(name: 'created_at') required this.createdAt,
+      @JsonKey(name: 'created_by') required this.createdBy,
+      required this.description});
 
   factory _$OperationalCardImpl.fromJson(Map<String, dynamic> json) =>
       _$$OperationalCardImplFromJson(json);
 
   @override
+  @JsonKey(name: 'rec_ser')
   final int id;
   @override
-  final int yearId;
-//
-  @override
+  @JsonKey(name: 'card_id')
   final int cardId;
   @override
-  final int cardprice;
+  @JsonKey(name: 'year_id')
+  final int yearId;
   @override
-  final int isFree;
-  @override
-  final int status;
-//
-  @override
+  @JsonKey(name: 'in_qty')
   final int inQty;
   @override
+  @JsonKey(name: 'out_qty')
   final int outQty;
+  @override
+  @JsonKey(name: 'card_price')
+  final double cardPrice;
 //
   @override
-  final int typeHdrId;
+  @JsonKey(name: 'is_free')
+  final bool isFree;
   @override
-  final int typeDtlId;
+  @JsonKey(name: 'is_generated')
+  final bool isGenerated;
+  @override
+  @JsonKey(name: 'is_valid')
+  final bool isValid;
+  @override
+  @JsonKey(name: 'is_rejected')
+  final bool isRejected;
+  @override
+  @JsonKey(name: 'is_out_dated')
+  final bool isOutDated;
 //
   @override
-  final DateTime createdOn;
+  @JsonKey(name: 'source_id')
+  final int sourceId;
+  @override
+  @JsonKey(name: 'source_table')
+  final String sourceTable;
+//
+  @override
+  @JsonKey(name: 'created_at')
+  final DateTime createdAt;
+  @override
+  @JsonKey(name: 'created_by')
+  final int createdBy;
+  @override
+  final String description;
 
   @override
   String toString() {
-    return 'OperationalCard(id: $id, yearId: $yearId, cardId: $cardId, cardprice: $cardprice, isFree: $isFree, status: $status, inQty: $inQty, outQty: $outQty, typeHdrId: $typeHdrId, typeDtlId: $typeDtlId, createdOn: $createdOn)';
+    return 'OperationalCard(id: $id, cardId: $cardId, yearId: $yearId, inQty: $inQty, outQty: $outQty, cardPrice: $cardPrice, isFree: $isFree, isGenerated: $isGenerated, isValid: $isValid, isRejected: $isRejected, isOutDated: $isOutDated, sourceId: $sourceId, sourceTable: $sourceTable, createdAt: $createdAt, createdBy: $createdBy, description: $description)';
   }
 
   @override
@@ -291,26 +400,52 @@ class _$OperationalCardImpl implements _OperationalCard {
         (other.runtimeType == runtimeType &&
             other is _$OperationalCardImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.yearId, yearId) || other.yearId == yearId) &&
             (identical(other.cardId, cardId) || other.cardId == cardId) &&
-            (identical(other.cardprice, cardprice) ||
-                other.cardprice == cardprice) &&
-            (identical(other.isFree, isFree) || other.isFree == isFree) &&
-            (identical(other.status, status) || other.status == status) &&
+            (identical(other.yearId, yearId) || other.yearId == yearId) &&
             (identical(other.inQty, inQty) || other.inQty == inQty) &&
             (identical(other.outQty, outQty) || other.outQty == outQty) &&
-            (identical(other.typeHdrId, typeHdrId) ||
-                other.typeHdrId == typeHdrId) &&
-            (identical(other.typeDtlId, typeDtlId) ||
-                other.typeDtlId == typeDtlId) &&
-            (identical(other.createdOn, createdOn) ||
-                other.createdOn == createdOn));
+            (identical(other.cardPrice, cardPrice) ||
+                other.cardPrice == cardPrice) &&
+            (identical(other.isFree, isFree) || other.isFree == isFree) &&
+            (identical(other.isGenerated, isGenerated) ||
+                other.isGenerated == isGenerated) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid) &&
+            (identical(other.isRejected, isRejected) ||
+                other.isRejected == isRejected) &&
+            (identical(other.isOutDated, isOutDated) ||
+                other.isOutDated == isOutDated) &&
+            (identical(other.sourceId, sourceId) ||
+                other.sourceId == sourceId) &&
+            (identical(other.sourceTable, sourceTable) ||
+                other.sourceTable == sourceTable) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, yearId, cardId, cardprice,
-      isFree, status, inQty, outQty, typeHdrId, typeDtlId, createdOn);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      cardId,
+      yearId,
+      inQty,
+      outQty,
+      cardPrice,
+      isFree,
+      isGenerated,
+      isValid,
+      isRejected,
+      isOutDated,
+      sourceId,
+      sourceTable,
+      createdAt,
+      createdBy,
+      description);
 
   /// Create a copy of OperationalCard
   /// with the given fields replaced by the non-null parameter values.
@@ -331,43 +466,73 @@ class _$OperationalCardImpl implements _OperationalCard {
 
 abstract class _OperationalCard implements OperationalCard {
   const factory _OperationalCard(
-      {required final int id,
-      required final int yearId,
-      required final int cardId,
-      required final int cardprice,
-      required final int isFree,
-      required final int status,
-      required final int inQty,
-      required final int outQty,
-      required final int typeHdrId,
-      required final int typeDtlId,
-      required final DateTime createdOn}) = _$OperationalCardImpl;
+      {@JsonKey(name: 'rec_ser') required final int id,
+      @JsonKey(name: 'card_id') required final int cardId,
+      @JsonKey(name: 'year_id') required final int yearId,
+      @JsonKey(name: 'in_qty') required final int inQty,
+      @JsonKey(name: 'out_qty') required final int outQty,
+      @JsonKey(name: 'card_price') required final double cardPrice,
+      @JsonKey(name: 'is_free') required final bool isFree,
+      @JsonKey(name: 'is_generated') required final bool isGenerated,
+      @JsonKey(name: 'is_valid') required final bool isValid,
+      @JsonKey(name: 'is_rejected') required final bool isRejected,
+      @JsonKey(name: 'is_out_dated') required final bool isOutDated,
+      @JsonKey(name: 'source_id') required final int sourceId,
+      @JsonKey(name: 'source_table') required final String sourceTable,
+      @JsonKey(name: 'created_at') required final DateTime createdAt,
+      @JsonKey(name: 'created_by') required final int createdBy,
+      required final String description}) = _$OperationalCardImpl;
 
   factory _OperationalCard.fromJson(Map<String, dynamic> json) =
       _$OperationalCardImpl.fromJson;
 
   @override
+  @JsonKey(name: 'rec_ser')
   int get id;
   @override
-  int get yearId; //
-  @override
+  @JsonKey(name: 'card_id')
   int get cardId;
   @override
-  int get cardprice;
+  @JsonKey(name: 'year_id')
+  int get yearId;
   @override
-  int get isFree;
-  @override
-  int get status; //
-  @override
+  @JsonKey(name: 'in_qty')
   int get inQty;
   @override
-  int get outQty; //
+  @JsonKey(name: 'out_qty')
+  int get outQty;
   @override
-  int get typeHdrId;
+  @JsonKey(name: 'card_price')
+  double get cardPrice; //
   @override
-  int get typeDtlId; //
+  @JsonKey(name: 'is_free')
+  bool get isFree;
   @override
-  DateTime get createdOn;
+  @JsonKey(name: 'is_generated')
+  bool get isGenerated;
+  @override
+  @JsonKey(name: 'is_valid')
+  bool get isValid;
+  @override
+  @JsonKey(name: 'is_rejected')
+  bool get isRejected;
+  @override
+  @JsonKey(name: 'is_out_dated')
+  bool get isOutDated; //
+  @override
+  @JsonKey(name: 'source_id')
+  int get sourceId;
+  @override
+  @JsonKey(name: 'source_table')
+  String get sourceTable; //
+  @override
+  @JsonKey(name: 'created_at')
+  DateTime get createdAt;
+  @override
+  @JsonKey(name: 'created_by')
+  int get createdBy;
+  @override
+  String get description;
 
   /// Create a copy of OperationalCard
   /// with the given fields replaced by the non-null parameter values.

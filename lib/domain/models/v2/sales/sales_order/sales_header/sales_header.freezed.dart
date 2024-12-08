@@ -21,12 +21,31 @@ SalesOrderHeader _$SalesOrderHeaderFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SalesOrderHeader {
   int get id => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_active')
+  bool get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_aproved')
+  bool get isAproved => throw _privateConstructorUsedError;
+  @JsonKey(name: 'point_id')
+  int get salePointId => throw _privateConstructorUsedError;
+  String get statement => throw _privateConstructorUsedError;
+  @JsonKey(name: 'year_id')
   int get yearID => throw _privateConstructorUsedError;
-  int get orderType => throw _privateConstructorUsedError; //
-  String get description => throw _privateConstructorUsedError; //
-  DateTime get createdOn => throw _privateConstructorUsedError;
-  DateTime get orderDate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_rejected')
+  bool get isRejected => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_valid')
+  bool get isValid => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_out_dated')
+  bool get isOutDated => throw _privateConstructorUsedError;
+  @JsonKey(name: 'created_at')
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'created_by')
+  int get createdBy => throw _privateConstructorUsedError;
+  @JsonKey(name: 'last_updated_at')
+  DateTime? get lastUpdatedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'last_updated_by')
+  int get lastUpdatedBy => throw _privateConstructorUsedError;
+  @JsonKey(name: 'update_counts')
+  int get updatedCount => throw _privateConstructorUsedError;
 
   /// Serializes this SalesOrderHeader to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,12 +65,19 @@ abstract class $SalesOrderHeaderCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      int status,
-      int yearID,
-      int orderType,
-      String description,
-      DateTime createdOn,
-      DateTime orderDate});
+      @JsonKey(name: 'is_active') bool status,
+      @JsonKey(name: 'is_aproved') bool isAproved,
+      @JsonKey(name: 'point_id') int salePointId,
+      String statement,
+      @JsonKey(name: 'year_id') int yearID,
+      @JsonKey(name: 'is_rejected') bool isRejected,
+      @JsonKey(name: 'is_valid') bool isValid,
+      @JsonKey(name: 'is_out_dated') bool isOutDated,
+      @JsonKey(name: 'created_at') DateTime createdAt,
+      @JsonKey(name: 'created_by') int createdBy,
+      @JsonKey(name: 'last_updated_at') DateTime? lastUpdatedAt,
+      @JsonKey(name: 'last_updated_by') int lastUpdatedBy,
+      @JsonKey(name: 'update_counts') int updatedCount});
 }
 
 /// @nodoc
@@ -71,11 +97,18 @@ class _$SalesOrderHeaderCopyWithImpl<$Res, $Val extends SalesOrderHeader>
   $Res call({
     Object? id = null,
     Object? status = null,
+    Object? isAproved = null,
+    Object? salePointId = null,
+    Object? statement = null,
     Object? yearID = null,
-    Object? orderType = null,
-    Object? description = null,
-    Object? createdOn = null,
-    Object? orderDate = null,
+    Object? isRejected = null,
+    Object? isValid = null,
+    Object? isOutDated = null,
+    Object? createdAt = null,
+    Object? createdBy = null,
+    Object? lastUpdatedAt = freezed,
+    Object? lastUpdatedBy = null,
+    Object? updatedCount = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -85,27 +118,55 @@ class _$SalesOrderHeaderCopyWithImpl<$Res, $Val extends SalesOrderHeader>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isAproved: null == isAproved
+          ? _value.isAproved
+          : isAproved // ignore: cast_nullable_to_non_nullable
+              as bool,
+      salePointId: null == salePointId
+          ? _value.salePointId
+          : salePointId // ignore: cast_nullable_to_non_nullable
               as int,
+      statement: null == statement
+          ? _value.statement
+          : statement // ignore: cast_nullable_to_non_nullable
+              as String,
       yearID: null == yearID
           ? _value.yearID
           : yearID // ignore: cast_nullable_to_non_nullable
               as int,
-      orderType: null == orderType
-          ? _value.orderType
-          : orderType // ignore: cast_nullable_to_non_nullable
+      isRejected: null == isRejected
+          ? _value.isRejected
+          : isRejected // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isOutDated: null == isOutDated
+          ? _value.isOutDated
+          : isOutDated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdBy: null == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
               as int,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdOn: null == createdOn
-          ? _value.createdOn
-          : createdOn // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      orderDate: null == orderDate
-          ? _value.orderDate
-          : orderDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+      lastUpdatedAt: freezed == lastUpdatedAt
+          ? _value.lastUpdatedAt
+          : lastUpdatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      lastUpdatedBy: null == lastUpdatedBy
+          ? _value.lastUpdatedBy
+          : lastUpdatedBy // ignore: cast_nullable_to_non_nullable
+              as int,
+      updatedCount: null == updatedCount
+          ? _value.updatedCount
+          : updatedCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -120,12 +181,19 @@ abstract class _$$SalesOrderHeaderImplCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
-      int status,
-      int yearID,
-      int orderType,
-      String description,
-      DateTime createdOn,
-      DateTime orderDate});
+      @JsonKey(name: 'is_active') bool status,
+      @JsonKey(name: 'is_aproved') bool isAproved,
+      @JsonKey(name: 'point_id') int salePointId,
+      String statement,
+      @JsonKey(name: 'year_id') int yearID,
+      @JsonKey(name: 'is_rejected') bool isRejected,
+      @JsonKey(name: 'is_valid') bool isValid,
+      @JsonKey(name: 'is_out_dated') bool isOutDated,
+      @JsonKey(name: 'created_at') DateTime createdAt,
+      @JsonKey(name: 'created_by') int createdBy,
+      @JsonKey(name: 'last_updated_at') DateTime? lastUpdatedAt,
+      @JsonKey(name: 'last_updated_by') int lastUpdatedBy,
+      @JsonKey(name: 'update_counts') int updatedCount});
 }
 
 /// @nodoc
@@ -143,11 +211,18 @@ class __$$SalesOrderHeaderImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? status = null,
+    Object? isAproved = null,
+    Object? salePointId = null,
+    Object? statement = null,
     Object? yearID = null,
-    Object? orderType = null,
-    Object? description = null,
-    Object? createdOn = null,
-    Object? orderDate = null,
+    Object? isRejected = null,
+    Object? isValid = null,
+    Object? isOutDated = null,
+    Object? createdAt = null,
+    Object? createdBy = null,
+    Object? lastUpdatedAt = freezed,
+    Object? lastUpdatedBy = null,
+    Object? updatedCount = null,
   }) {
     return _then(_$SalesOrderHeaderImpl(
       id: null == id
@@ -157,27 +232,55 @@ class __$$SalesOrderHeaderImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isAproved: null == isAproved
+          ? _value.isAproved
+          : isAproved // ignore: cast_nullable_to_non_nullable
+              as bool,
+      salePointId: null == salePointId
+          ? _value.salePointId
+          : salePointId // ignore: cast_nullable_to_non_nullable
               as int,
+      statement: null == statement
+          ? _value.statement
+          : statement // ignore: cast_nullable_to_non_nullable
+              as String,
       yearID: null == yearID
           ? _value.yearID
           : yearID // ignore: cast_nullable_to_non_nullable
               as int,
-      orderType: null == orderType
-          ? _value.orderType
-          : orderType // ignore: cast_nullable_to_non_nullable
+      isRejected: null == isRejected
+          ? _value.isRejected
+          : isRejected // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isOutDated: null == isOutDated
+          ? _value.isOutDated
+          : isOutDated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdBy: null == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
               as int,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdOn: null == createdOn
-          ? _value.createdOn
-          : createdOn // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      orderDate: null == orderDate
-          ? _value.orderDate
-          : orderDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+      lastUpdatedAt: freezed == lastUpdatedAt
+          ? _value.lastUpdatedAt
+          : lastUpdatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      lastUpdatedBy: null == lastUpdatedBy
+          ? _value.lastUpdatedBy
+          : lastUpdatedBy // ignore: cast_nullable_to_non_nullable
+              as int,
+      updatedCount: null == updatedCount
+          ? _value.updatedCount
+          : updatedCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -187,12 +290,19 @@ class __$$SalesOrderHeaderImplCopyWithImpl<$Res>
 class _$SalesOrderHeaderImpl implements _SalesOrderHeader {
   const _$SalesOrderHeaderImpl(
       {required this.id,
-      required this.status,
-      required this.yearID,
-      required this.orderType,
-      required this.description,
-      required this.createdOn,
-      required this.orderDate});
+      @JsonKey(name: 'is_active') required this.status,
+      @JsonKey(name: 'is_aproved') required this.isAproved,
+      @JsonKey(name: 'point_id') required this.salePointId,
+      this.statement = 'create order',
+      @JsonKey(name: 'year_id') required this.yearID,
+      @JsonKey(name: 'is_rejected') required this.isRejected,
+      @JsonKey(name: 'is_valid') required this.isValid,
+      @JsonKey(name: 'is_out_dated') required this.isOutDated,
+      @JsonKey(name: 'created_at') required this.createdAt,
+      @JsonKey(name: 'created_by') required this.createdBy,
+      @JsonKey(name: 'last_updated_at') this.lastUpdatedAt,
+      @JsonKey(name: 'last_updated_by') required this.lastUpdatedBy,
+      @JsonKey(name: 'update_counts') required this.updatedCount});
 
   factory _$SalesOrderHeaderImpl.fromJson(Map<String, dynamic> json) =>
       _$$SalesOrderHeaderImplFromJson(json);
@@ -200,23 +310,48 @@ class _$SalesOrderHeaderImpl implements _SalesOrderHeader {
   @override
   final int id;
   @override
-  final int status;
+  @JsonKey(name: 'is_active')
+  final bool status;
   @override
+  @JsonKey(name: 'is_aproved')
+  final bool isAproved;
+  @override
+  @JsonKey(name: 'point_id')
+  final int salePointId;
+  @override
+  @JsonKey()
+  final String statement;
+  @override
+  @JsonKey(name: 'year_id')
   final int yearID;
   @override
-  final int orderType;
-//
+  @JsonKey(name: 'is_rejected')
+  final bool isRejected;
   @override
-  final String description;
-//
+  @JsonKey(name: 'is_valid')
+  final bool isValid;
   @override
-  final DateTime createdOn;
+  @JsonKey(name: 'is_out_dated')
+  final bool isOutDated;
   @override
-  final DateTime orderDate;
+  @JsonKey(name: 'created_at')
+  final DateTime createdAt;
+  @override
+  @JsonKey(name: 'created_by')
+  final int createdBy;
+  @override
+  @JsonKey(name: 'last_updated_at')
+  final DateTime? lastUpdatedAt;
+  @override
+  @JsonKey(name: 'last_updated_by')
+  final int lastUpdatedBy;
+  @override
+  @JsonKey(name: 'update_counts')
+  final int updatedCount;
 
   @override
   String toString() {
-    return 'SalesOrderHeader(id: $id, status: $status, yearID: $yearID, orderType: $orderType, description: $description, createdOn: $createdOn, orderDate: $orderDate)';
+    return 'SalesOrderHeader(id: $id, status: $status, isAproved: $isAproved, salePointId: $salePointId, statement: $statement, yearID: $yearID, isRejected: $isRejected, isValid: $isValid, isOutDated: $isOutDated, createdAt: $createdAt, createdBy: $createdBy, lastUpdatedAt: $lastUpdatedAt, lastUpdatedBy: $lastUpdatedBy, updatedCount: $updatedCount)';
   }
 
   @override
@@ -226,21 +361,48 @@ class _$SalesOrderHeaderImpl implements _SalesOrderHeader {
             other is _$SalesOrderHeaderImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.isAproved, isAproved) ||
+                other.isAproved == isAproved) &&
+            (identical(other.salePointId, salePointId) ||
+                other.salePointId == salePointId) &&
+            (identical(other.statement, statement) ||
+                other.statement == statement) &&
             (identical(other.yearID, yearID) || other.yearID == yearID) &&
-            (identical(other.orderType, orderType) ||
-                other.orderType == orderType) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.createdOn, createdOn) ||
-                other.createdOn == createdOn) &&
-            (identical(other.orderDate, orderDate) ||
-                other.orderDate == orderDate));
+            (identical(other.isRejected, isRejected) ||
+                other.isRejected == isRejected) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid) &&
+            (identical(other.isOutDated, isOutDated) ||
+                other.isOutDated == isOutDated) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.lastUpdatedAt, lastUpdatedAt) ||
+                other.lastUpdatedAt == lastUpdatedAt) &&
+            (identical(other.lastUpdatedBy, lastUpdatedBy) ||
+                other.lastUpdatedBy == lastUpdatedBy) &&
+            (identical(other.updatedCount, updatedCount) ||
+                other.updatedCount == updatedCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, status, yearID, orderType,
-      description, createdOn, orderDate);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      status,
+      isAproved,
+      salePointId,
+      statement,
+      yearID,
+      isRejected,
+      isValid,
+      isOutDated,
+      createdAt,
+      createdBy,
+      lastUpdatedAt,
+      lastUpdatedBy,
+      updatedCount);
 
   /// Create a copy of SalesOrderHeader
   /// with the given fields replaced by the non-null parameter values.
@@ -261,13 +423,21 @@ class _$SalesOrderHeaderImpl implements _SalesOrderHeader {
 
 abstract class _SalesOrderHeader implements SalesOrderHeader {
   const factory _SalesOrderHeader(
-      {required final int id,
-      required final int status,
-      required final int yearID,
-      required final int orderType,
-      required final String description,
-      required final DateTime createdOn,
-      required final DateTime orderDate}) = _$SalesOrderHeaderImpl;
+          {required final int id,
+          @JsonKey(name: 'is_active') required final bool status,
+          @JsonKey(name: 'is_aproved') required final bool isAproved,
+          @JsonKey(name: 'point_id') required final int salePointId,
+          final String statement,
+          @JsonKey(name: 'year_id') required final int yearID,
+          @JsonKey(name: 'is_rejected') required final bool isRejected,
+          @JsonKey(name: 'is_valid') required final bool isValid,
+          @JsonKey(name: 'is_out_dated') required final bool isOutDated,
+          @JsonKey(name: 'created_at') required final DateTime createdAt,
+          @JsonKey(name: 'created_by') required final int createdBy,
+          @JsonKey(name: 'last_updated_at') final DateTime? lastUpdatedAt,
+          @JsonKey(name: 'last_updated_by') required final int lastUpdatedBy,
+          @JsonKey(name: 'update_counts') required final int updatedCount}) =
+      _$SalesOrderHeaderImpl;
 
   factory _SalesOrderHeader.fromJson(Map<String, dynamic> json) =
       _$SalesOrderHeaderImpl.fromJson;
@@ -275,22 +445,323 @@ abstract class _SalesOrderHeader implements SalesOrderHeader {
   @override
   int get id;
   @override
-  int get status;
+  @JsonKey(name: 'is_active')
+  bool get status;
   @override
+  @JsonKey(name: 'is_aproved')
+  bool get isAproved;
+  @override
+  @JsonKey(name: 'point_id')
+  int get salePointId;
+  @override
+  String get statement;
+  @override
+  @JsonKey(name: 'year_id')
   int get yearID;
   @override
-  int get orderType; //
+  @JsonKey(name: 'is_rejected')
+  bool get isRejected;
   @override
-  String get description; //
+  @JsonKey(name: 'is_valid')
+  bool get isValid;
   @override
-  DateTime get createdOn;
+  @JsonKey(name: 'is_out_dated')
+  bool get isOutDated;
   @override
-  DateTime get orderDate;
+  @JsonKey(name: 'created_at')
+  DateTime get createdAt;
+  @override
+  @JsonKey(name: 'created_by')
+  int get createdBy;
+  @override
+  @JsonKey(name: 'last_updated_at')
+  DateTime? get lastUpdatedAt;
+  @override
+  @JsonKey(name: 'last_updated_by')
+  int get lastUpdatedBy;
+  @override
+  @JsonKey(name: 'update_counts')
+  int get updatedCount;
 
   /// Create a copy of SalesOrderHeader
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SalesOrderHeaderImplCopyWith<_$SalesOrderHeaderImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SlsOrdHdrData _$SlsOrdHdrDataFromJson(Map<String, dynamic> json) {
+  return _SlsOrdHdrData.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SlsOrdHdrData {
+  @JsonKey(name: 'point_id')
+  int get salePointId => throw _privateConstructorUsedError;
+  String get statement => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_active')
+  bool? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_rejected')
+  bool? get isRejected => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_valid')
+  bool? get isValid => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_out_dated')
+  bool? get isOutDated => throw _privateConstructorUsedError;
+
+  /// Serializes this SlsOrdHdrData to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of SlsOrdHdrData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SlsOrdHdrDataCopyWith<SlsOrdHdrData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SlsOrdHdrDataCopyWith<$Res> {
+  factory $SlsOrdHdrDataCopyWith(
+          SlsOrdHdrData value, $Res Function(SlsOrdHdrData) then) =
+      _$SlsOrdHdrDataCopyWithImpl<$Res, SlsOrdHdrData>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'point_id') int salePointId,
+      String statement,
+      @JsonKey(name: 'is_active') bool? status,
+      @JsonKey(name: 'is_rejected') bool? isRejected,
+      @JsonKey(name: 'is_valid') bool? isValid,
+      @JsonKey(name: 'is_out_dated') bool? isOutDated});
+}
+
+/// @nodoc
+class _$SlsOrdHdrDataCopyWithImpl<$Res, $Val extends SlsOrdHdrData>
+    implements $SlsOrdHdrDataCopyWith<$Res> {
+  _$SlsOrdHdrDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of SlsOrdHdrData
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? salePointId = null,
+    Object? statement = null,
+    Object? status = freezed,
+    Object? isRejected = freezed,
+    Object? isValid = freezed,
+    Object? isOutDated = freezed,
+  }) {
+    return _then(_value.copyWith(
+      salePointId: null == salePointId
+          ? _value.salePointId
+          : salePointId // ignore: cast_nullable_to_non_nullable
+              as int,
+      statement: null == statement
+          ? _value.statement
+          : statement // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isRejected: freezed == isRejected
+          ? _value.isRejected
+          : isRejected // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isValid: freezed == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isOutDated: freezed == isOutDated
+          ? _value.isOutDated
+          : isOutDated // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SlsOrdHdrDataImplCopyWith<$Res>
+    implements $SlsOrdHdrDataCopyWith<$Res> {
+  factory _$$SlsOrdHdrDataImplCopyWith(
+          _$SlsOrdHdrDataImpl value, $Res Function(_$SlsOrdHdrDataImpl) then) =
+      __$$SlsOrdHdrDataImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'point_id') int salePointId,
+      String statement,
+      @JsonKey(name: 'is_active') bool? status,
+      @JsonKey(name: 'is_rejected') bool? isRejected,
+      @JsonKey(name: 'is_valid') bool? isValid,
+      @JsonKey(name: 'is_out_dated') bool? isOutDated});
+}
+
+/// @nodoc
+class __$$SlsOrdHdrDataImplCopyWithImpl<$Res>
+    extends _$SlsOrdHdrDataCopyWithImpl<$Res, _$SlsOrdHdrDataImpl>
+    implements _$$SlsOrdHdrDataImplCopyWith<$Res> {
+  __$$SlsOrdHdrDataImplCopyWithImpl(
+      _$SlsOrdHdrDataImpl _value, $Res Function(_$SlsOrdHdrDataImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SlsOrdHdrData
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? salePointId = null,
+    Object? statement = null,
+    Object? status = freezed,
+    Object? isRejected = freezed,
+    Object? isValid = freezed,
+    Object? isOutDated = freezed,
+  }) {
+    return _then(_$SlsOrdHdrDataImpl(
+      salePointId: null == salePointId
+          ? _value.salePointId
+          : salePointId // ignore: cast_nullable_to_non_nullable
+              as int,
+      statement: null == statement
+          ? _value.statement
+          : statement // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isRejected: freezed == isRejected
+          ? _value.isRejected
+          : isRejected // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isValid: freezed == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isOutDated: freezed == isOutDated
+          ? _value.isOutDated
+          : isOutDated // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SlsOrdHdrDataImpl implements _SlsOrdHdrData {
+  const _$SlsOrdHdrDataImpl(
+      {@JsonKey(name: 'point_id') required this.salePointId,
+      this.statement = 'null',
+      @JsonKey(name: 'is_active') this.status,
+      @JsonKey(name: 'is_rejected') this.isRejected,
+      @JsonKey(name: 'is_valid') this.isValid,
+      @JsonKey(name: 'is_out_dated') this.isOutDated});
+
+  factory _$SlsOrdHdrDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SlsOrdHdrDataImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'point_id')
+  final int salePointId;
+  @override
+  @JsonKey()
+  final String statement;
+  @override
+  @JsonKey(name: 'is_active')
+  final bool? status;
+  @override
+  @JsonKey(name: 'is_rejected')
+  final bool? isRejected;
+  @override
+  @JsonKey(name: 'is_valid')
+  final bool? isValid;
+  @override
+  @JsonKey(name: 'is_out_dated')
+  final bool? isOutDated;
+
+  @override
+  String toString() {
+    return 'SlsOrdHdrData(salePointId: $salePointId, statement: $statement, status: $status, isRejected: $isRejected, isValid: $isValid, isOutDated: $isOutDated)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SlsOrdHdrDataImpl &&
+            (identical(other.salePointId, salePointId) ||
+                other.salePointId == salePointId) &&
+            (identical(other.statement, statement) ||
+                other.statement == statement) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.isRejected, isRejected) ||
+                other.isRejected == isRejected) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid) &&
+            (identical(other.isOutDated, isOutDated) ||
+                other.isOutDated == isOutDated));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, salePointId, statement, status,
+      isRejected, isValid, isOutDated);
+
+  /// Create a copy of SlsOrdHdrData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SlsOrdHdrDataImplCopyWith<_$SlsOrdHdrDataImpl> get copyWith =>
+      __$$SlsOrdHdrDataImplCopyWithImpl<_$SlsOrdHdrDataImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SlsOrdHdrDataImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _SlsOrdHdrData implements SlsOrdHdrData {
+  const factory _SlsOrdHdrData(
+          {@JsonKey(name: 'point_id') required final int salePointId,
+          final String statement,
+          @JsonKey(name: 'is_active') final bool? status,
+          @JsonKey(name: 'is_rejected') final bool? isRejected,
+          @JsonKey(name: 'is_valid') final bool? isValid,
+          @JsonKey(name: 'is_out_dated') final bool? isOutDated}) =
+      _$SlsOrdHdrDataImpl;
+
+  factory _SlsOrdHdrData.fromJson(Map<String, dynamic> json) =
+      _$SlsOrdHdrDataImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'point_id')
+  int get salePointId;
+  @override
+  String get statement;
+  @override
+  @JsonKey(name: 'is_active')
+  bool? get status;
+  @override
+  @JsonKey(name: 'is_rejected')
+  bool? get isRejected;
+  @override
+  @JsonKey(name: 'is_valid')
+  bool? get isValid;
+  @override
+  @JsonKey(name: 'is_out_dated')
+  bool? get isOutDated;
+
+  /// Create a copy of SlsOrdHdrData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SlsOrdHdrDataImplCopyWith<_$SlsOrdHdrDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

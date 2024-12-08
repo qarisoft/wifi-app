@@ -20,10 +20,15 @@ CardsSummery _$CardsSummeryFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CardsSummery {
+  int get id => throw _privateConstructorUsedError;
   String get item => throw _privateConstructorUsedError;
-  int get avilable => throw _privateConstructorUsedError;
+  int get available => throw _privateConstructorUsedError;
+  int get broken => throw _privateConstructorUsedError;
+  int get validReturned => throw _privateConstructorUsedError;
+  int get outDated => throw _privateConstructorUsedError;
+  int get generated => throw _privateConstructorUsedError;
+  int get store => throw _privateConstructorUsedError;
   int get soled => throw _privateConstructorUsedError;
-  int get total => throw _privateConstructorUsedError;
 
   /// Serializes this CardsSummery to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,7 +46,16 @@ abstract class $CardsSummeryCopyWith<$Res> {
           CardsSummery value, $Res Function(CardsSummery) then) =
       _$CardsSummeryCopyWithImpl<$Res, CardsSummery>;
   @useResult
-  $Res call({String item, int avilable, int soled, int total});
+  $Res call(
+      {int id,
+      String item,
+      int available,
+      int broken,
+      int validReturned,
+      int outDated,
+      int generated,
+      int store,
+      int soled});
 }
 
 /// @nodoc
@@ -59,27 +73,52 @@ class _$CardsSummeryCopyWithImpl<$Res, $Val extends CardsSummery>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? item = null,
-    Object? avilable = null,
+    Object? available = null,
+    Object? broken = null,
+    Object? validReturned = null,
+    Object? outDated = null,
+    Object? generated = null,
+    Object? store = null,
     Object? soled = null,
-    Object? total = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       item: null == item
           ? _value.item
           : item // ignore: cast_nullable_to_non_nullable
               as String,
-      avilable: null == avilable
-          ? _value.avilable
-          : avilable // ignore: cast_nullable_to_non_nullable
+      available: null == available
+          ? _value.available
+          : available // ignore: cast_nullable_to_non_nullable
+              as int,
+      broken: null == broken
+          ? _value.broken
+          : broken // ignore: cast_nullable_to_non_nullable
+              as int,
+      validReturned: null == validReturned
+          ? _value.validReturned
+          : validReturned // ignore: cast_nullable_to_non_nullable
+              as int,
+      outDated: null == outDated
+          ? _value.outDated
+          : outDated // ignore: cast_nullable_to_non_nullable
+              as int,
+      generated: null == generated
+          ? _value.generated
+          : generated // ignore: cast_nullable_to_non_nullable
+              as int,
+      store: null == store
+          ? _value.store
+          : store // ignore: cast_nullable_to_non_nullable
               as int,
       soled: null == soled
           ? _value.soled
           : soled // ignore: cast_nullable_to_non_nullable
-              as int,
-      total: null == total
-          ? _value.total
-          : total // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -93,7 +132,16 @@ abstract class _$$CardsSummeryImplCopyWith<$Res>
       __$$CardsSummeryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String item, int avilable, int soled, int total});
+  $Res call(
+      {int id,
+      String item,
+      int available,
+      int broken,
+      int validReturned,
+      int outDated,
+      int generated,
+      int store,
+      int soled});
 }
 
 /// @nodoc
@@ -109,27 +157,52 @@ class __$$CardsSummeryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? item = null,
-    Object? avilable = null,
+    Object? available = null,
+    Object? broken = null,
+    Object? validReturned = null,
+    Object? outDated = null,
+    Object? generated = null,
+    Object? store = null,
     Object? soled = null,
-    Object? total = null,
   }) {
     return _then(_$CardsSummeryImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       item: null == item
           ? _value.item
           : item // ignore: cast_nullable_to_non_nullable
               as String,
-      avilable: null == avilable
-          ? _value.avilable
-          : avilable // ignore: cast_nullable_to_non_nullable
+      available: null == available
+          ? _value.available
+          : available // ignore: cast_nullable_to_non_nullable
+              as int,
+      broken: null == broken
+          ? _value.broken
+          : broken // ignore: cast_nullable_to_non_nullable
+              as int,
+      validReturned: null == validReturned
+          ? _value.validReturned
+          : validReturned // ignore: cast_nullable_to_non_nullable
+              as int,
+      outDated: null == outDated
+          ? _value.outDated
+          : outDated // ignore: cast_nullable_to_non_nullable
+              as int,
+      generated: null == generated
+          ? _value.generated
+          : generated // ignore: cast_nullable_to_non_nullable
+              as int,
+      store: null == store
+          ? _value.store
+          : store // ignore: cast_nullable_to_non_nullable
               as int,
       soled: null == soled
           ? _value.soled
           : soled // ignore: cast_nullable_to_non_nullable
-              as int,
-      total: null == total
-          ? _value.total
-          : total // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -139,26 +212,49 @@ class __$$CardsSummeryImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CardsSummeryImpl implements _CardsSummery {
   const _$CardsSummeryImpl(
-      {required this.item,
-      required this.avilable,
-      required this.soled,
-      required this.total});
+      {required this.id,
+      this.item = '',
+      this.available = 0,
+      this.broken = 0,
+      this.validReturned = 0,
+      this.outDated = 0,
+      this.generated = 0,
+      this.store = 0,
+      this.soled = 0});
 
   factory _$CardsSummeryImpl.fromJson(Map<String, dynamic> json) =>
       _$$CardsSummeryImplFromJson(json);
 
   @override
+  final int id;
+  @override
+  @JsonKey()
   final String item;
   @override
-  final int avilable;
+  @JsonKey()
+  final int available;
   @override
+  @JsonKey()
+  final int broken;
+  @override
+  @JsonKey()
+  final int validReturned;
+  @override
+  @JsonKey()
+  final int outDated;
+  @override
+  @JsonKey()
+  final int generated;
+  @override
+  @JsonKey()
+  final int store;
+  @override
+  @JsonKey()
   final int soled;
-  @override
-  final int total;
 
   @override
   String toString() {
-    return 'CardsSummery(item: $item, avilable: $avilable, soled: $soled, total: $total)';
+    return 'CardsSummery(id: $id, item: $item, available: $available, broken: $broken, validReturned: $validReturned, outDated: $outDated, generated: $generated, store: $store, soled: $soled)';
   }
 
   @override
@@ -166,16 +262,25 @@ class _$CardsSummeryImpl implements _CardsSummery {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CardsSummeryImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.item, item) || other.item == item) &&
-            (identical(other.avilable, avilable) ||
-                other.avilable == avilable) &&
-            (identical(other.soled, soled) || other.soled == soled) &&
-            (identical(other.total, total) || other.total == total));
+            (identical(other.available, available) ||
+                other.available == available) &&
+            (identical(other.broken, broken) || other.broken == broken) &&
+            (identical(other.validReturned, validReturned) ||
+                other.validReturned == validReturned) &&
+            (identical(other.outDated, outDated) ||
+                other.outDated == outDated) &&
+            (identical(other.generated, generated) ||
+                other.generated == generated) &&
+            (identical(other.store, store) || other.store == store) &&
+            (identical(other.soled, soled) || other.soled == soled));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, item, avilable, soled, total);
+  int get hashCode => Object.hash(runtimeType, id, item, available, broken,
+      validReturned, outDated, generated, store, soled);
 
   /// Create a copy of CardsSummery
   /// with the given fields replaced by the non-null parameter values.
@@ -195,22 +300,37 @@ class _$CardsSummeryImpl implements _CardsSummery {
 
 abstract class _CardsSummery implements CardsSummery {
   const factory _CardsSummery(
-      {required final String item,
-      required final int avilable,
-      required final int soled,
-      required final int total}) = _$CardsSummeryImpl;
+      {required final int id,
+      final String item,
+      final int available,
+      final int broken,
+      final int validReturned,
+      final int outDated,
+      final int generated,
+      final int store,
+      final int soled}) = _$CardsSummeryImpl;
 
   factory _CardsSummery.fromJson(Map<String, dynamic> json) =
       _$CardsSummeryImpl.fromJson;
 
   @override
+  int get id;
+  @override
   String get item;
   @override
-  int get avilable;
+  int get available;
+  @override
+  int get broken;
+  @override
+  int get validReturned;
+  @override
+  int get outDated;
+  @override
+  int get generated;
+  @override
+  int get store;
   @override
   int get soled;
-  @override
-  int get total;
 
   /// Create a copy of CardsSummery
   /// with the given fields replaced by the non-null parameter values.

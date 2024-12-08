@@ -7,30 +7,58 @@ part of 'card.dart';
 // **************************************************************************
 
 _$CardImpl _$$CardImplFromJson(Map<String, dynamic> json) => _$CardImpl(
+      speed: (json['speed'] as num?)?.toInt() ?? 0,
       id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-      speed: json['speed'] as String,
-      bandWidth: json['bandWidth'] as String,
-      code: json['code'] as String,
-      status: (json['status'] as num).toInt(),
-      createdOn: DateTime.parse(json['createdOn'] as String),
-      createdBy: (json['createdBy'] as num).toInt(),
-      lastupdatedOn: DateTime.parse(json['lastupdatedOn'] as String),
-      lastupdatedBy: (json['lastupdatedBy'] as num).toInt(),
-      updatedCount: (json['updatedCount'] as num).toInt(),
+      price: (json['price'] as num).toDouble(),
+      status: json['is_active'] as bool,
+      name: json['name'] as String? ?? '',
+      code: json['code'] as String? ?? '',
+      bandWidth: (json['band_width'] as num?)?.toInt(),
+      isFree: json['is_free'] as bool,
+      createdAt: DateTime.parse(json['created_at'] as String),
+      createdBy: (json['created_by'] as num).toInt(),
+      lastupdatedAt: json['last_updated_at'] == null
+          ? null
+          : DateTime.parse(json['last_updated_at'] as String),
+      lastupdatedBy: (json['last_updated_by'] as num).toInt(),
+      updatedCount: (json['update_counts'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$CardImplToJson(_$CardImpl instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
       'speed': instance.speed,
-      'bandWidth': instance.bandWidth,
+      'id': instance.id,
+      'price': instance.price,
+      'is_active': instance.status,
+      'name': instance.name,
       'code': instance.code,
-      'status': instance.status,
-      'createdOn': instance.createdOn.toIso8601String(),
-      'createdBy': instance.createdBy,
-      'lastupdatedOn': instance.lastupdatedOn.toIso8601String(),
-      'lastupdatedBy': instance.lastupdatedBy,
-      'updatedCount': instance.updatedCount,
+      'band_width': instance.bandWidth,
+      'is_free': instance.isFree,
+      'created_at': instance.createdAt.toIso8601String(),
+      'created_by': instance.createdBy,
+      'last_updated_at': instance.lastupdatedAt?.toIso8601String(),
+      'last_updated_by': instance.lastupdatedBy,
+      'update_counts': instance.updatedCount,
+    };
+
+_$CardDataImpl _$$CardDataImplFromJson(Map<String, dynamic> json) =>
+    _$CardDataImpl(
+      price: (json['price'] as num).toDouble(),
+      speed: (json['speed'] as num?)?.toInt() ?? 0,
+      name: json['name'] as String,
+      code: json['code'] as String,
+      status: json['is_active'] as bool?,
+      bandWidth: (json['band_width'] as num?)?.toInt(),
+      isFree: json['is_free'] as bool?,
+    );
+
+Map<String, dynamic> _$$CardDataImplToJson(_$CardDataImpl instance) =>
+    <String, dynamic>{
+      'price': instance.price,
+      'speed': instance.speed,
+      'name': instance.name,
+      'code': instance.code,
+      'is_active': instance.status,
+      'band_width': instance.bandWidth,
+      'is_free': instance.isFree,
     };

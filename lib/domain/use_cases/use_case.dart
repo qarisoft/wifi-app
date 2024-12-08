@@ -1,20 +1,29 @@
 import 'package:app/core/error/failure.dart';
+import 'package:app/core/utils/types.dart';
+// import 'package:app/core/utils/types.dart';
 import 'package:dartz/dartz.dart';
+export 'package:app/core/utils/types.dart';
 
-abstract class UseCase<T> {
-  Future<Either<AppFailure, T>> execute(dynamic);
+abstract class UseCase<R extends AppFailure, T, E> {
+  Future<Either<R, T>> call(E params);
 }
 
 abstract class AddDeleteEdit<T> {
-  Future<Either<AppFailure, T>> add(Map<String, dynamic> t);
+  FOr< T> add(Map<String, dynamic> t);
+  FOr< bool> delete(int id);
+  FOr< T> edit(T t);
+  FOr< T> create(T t);
+  FOr< T> getById(int id);
+  FOr< List<T>> getAll();
+}
 
-  Future<Either<AppFailure, bool>> delete(int id);
+abstract class CreateDeleteUpdate<T, CD> {
+  String get table;
 
-  Future<Either<AppFailure, T>> edit(T t);
-
-  Future<Either<AppFailure, T>> create(T t);
-
-  Future<Either<AppFailure, T>> getById(int id);
-
-  Future<Either<AppFailure, List<T>>> getAll();
+  FOr< int > create(CD data);
+  FOr< bool> delete(int id);
+  FOr< bool> edit(Map<String, dynamic> t, int id);
+  FOr< bool> update(CD t, int id);
+  FOr< T> getById(int id);
+  FOr< List<T>> getAll();
 }

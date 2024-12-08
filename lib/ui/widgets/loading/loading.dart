@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:app/ui/pages/extensions.dart';
+import 'package:app/ui/share/ex.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import '../../share/strings.dart';
 
 typedef CloseLoadingScreen = bool Function();
 typedef UpdateLoadingScreen = bool Function(String text);
@@ -47,11 +47,11 @@ class LoadingScreen {
       textController.add(text);
     }
     final state = Overlay.of(context);
-    if (state == null) {
-      return null;
-    }
-    final renderBox = context.findRenderObject() as RenderBox;
-    final size = renderBox.size;
+    // if (state == null) {
+    //   return null;
+    // }
+    // final renderBox = context.findRenderObject() as RenderBox;
+    // final size = renderBox.size;
 
     final overlay = OverlayEntry(
       builder: (context) {
@@ -70,7 +70,7 @@ class LoadingScreen {
                       child: const Padding(
                         padding: EdgeInsets.all(10),
                         child: SingleChildScrollView(
-                          child: CircularProgressIndicator(),
+                          child: CupertinoActivityIndicator(),
                         ),
                       ),
                     ),

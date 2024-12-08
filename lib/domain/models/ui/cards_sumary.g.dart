@@ -8,16 +8,26 @@ part of 'cards_sumary.dart';
 
 _$CardsSummeryImpl _$$CardsSummeryImplFromJson(Map<String, dynamic> json) =>
     _$CardsSummeryImpl(
-      item: json['item'] as String,
-      avilable: (json['avilable'] as num).toInt(),
-      soled: (json['soled'] as num).toInt(),
-      total: (json['total'] as num).toInt(),
+      id: (json['id'] as num).toInt(),
+      item: json['item'] as String? ?? '',
+      available: (json['available'] as num?)?.toInt() ?? 0,
+      broken: (json['broken'] as num?)?.toInt() ?? 0,
+      validReturned: (json['validReturned'] as num?)?.toInt() ?? 0,
+      outDated: (json['outDated'] as num?)?.toInt() ?? 0,
+      generated: (json['generated'] as num?)?.toInt() ?? 0,
+      store: (json['store'] as num?)?.toInt() ?? 0,
+      soled: (json['soled'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$CardsSummeryImplToJson(_$CardsSummeryImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'item': instance.item,
-      'avilable': instance.avilable,
+      'available': instance.available,
+      'broken': instance.broken,
+      'validReturned': instance.validReturned,
+      'outDated': instance.outDated,
+      'generated': instance.generated,
+      'store': instance.store,
       'soled': instance.soled,
-      'total': instance.total,
     };
